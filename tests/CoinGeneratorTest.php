@@ -8,9 +8,11 @@ class CoinGeneratorTest extends TestCase
 {
     public function testGenerate()
     {
+        $n        = 12;
+        $m        = 6;
         //Число сочетаний без повторений
-        $count    = Match::c(12, 6);
-        $variants = (new CoinGenerator())->generate(12, 6);
+        $count    = Match::c($n, $m);
+        $variants = (new CoinGenerator())->generate($n, $m);
 
         $this->assertCount($count, $variants);
     }
